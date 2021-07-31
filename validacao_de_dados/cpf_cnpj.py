@@ -1,3 +1,4 @@
+# precisa instalar o validate-docbr
 from validate_docbr import CPF, CNPJ
 
 class Documento:
