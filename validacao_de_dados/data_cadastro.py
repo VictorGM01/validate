@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class DatasBr:
     def __init__(self):
         self.momento_do_cadastro = datetime.today()
@@ -9,7 +10,7 @@ class DatasBr:
 
     def mes_cadastro(self):
         meses_do_ano = {
-            1: "janeiro", 2: "fevereiro", 3: "março", 4:"abril", 5: "maio",
+            1: "janeiro", 2: "fevereiro", 3: "março", 4: "abril", 5: "maio",
             6: "junho", 7: "julho", 8: "agosto", 9: "setembro", 10: "outubro",
             11: "novembro", 12: "dezembro"
         }
@@ -25,7 +26,9 @@ class DatasBr:
         return dias_da_semana[dia_cadastro]
 
     def data_formatada(self):
-        data_formatada = self.momento_do_cadastro.strftime("%d/%m/%Y  %H:%M:%S")
+        data_formatada = self.momento_do_cadastro.strftime(
+            "%d/%m/%Y  %H:%M:%S"
+        )
         return data_formatada
 
     def tempo_de_cadastro(self):
