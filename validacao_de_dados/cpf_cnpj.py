@@ -1,17 +1,19 @@
 # precisa instalar o validate-docbr
 from validate_docbr import CPF, CNPJ
 
+
 class Documento:
     @staticmethod
     def cria_documento(documento):
         if len(documento) == 11:
-            return Doc_Cpf(documento)
+            return DocumentoCpf(documento)
         elif len(documento) == 14:
-            return Doc_Cnpj(documento)
+            return DocumentoCnpj(documento)
         else:
             raise ValueError("A quantidade de dígitos é inválida")
 
-class Doc_Cpf:
+
+class DocumentoCpf:
     def __init__(self, documento):
         if self.valida(documento):
             self.cpf = documento
@@ -29,7 +31,8 @@ class Doc_Cpf:
     def __str__(self):
         return self.formata()
 
-class Doc_Cnpj:
+
+class DocumentoCnpj:
     def __init__(self, documento):
         if self.valida(documento):
             self.cnpj = documento
