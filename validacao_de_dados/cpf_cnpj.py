@@ -4,7 +4,7 @@ from validate_docbr import CPF, CNPJ
 
 class Documento:
     @staticmethod
-    def cria_documento(documento):
+    def cria_documento(documento: str):
         if len(documento) == 11:
             return DocumentoCpf(documento)
         elif len(documento) == 14:
@@ -14,7 +14,7 @@ class Documento:
 
 
 class DocumentoCpf:
-    def __init__(self, documento):
+    def __init__(self, documento: str):
         if self.valida(documento):
             self.cpf = documento
         else:
@@ -28,12 +28,12 @@ class DocumentoCpf:
         mascara = CPF()
         return mascara.mask(self.cpf)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.formata()
 
 
 class DocumentoCnpj:
-    def __init__(self, documento):
+    def __init__(self, documento: str):
         if self.valida(documento):
             self.cnpj = documento
         else:
@@ -47,5 +47,5 @@ class DocumentoCnpj:
         mascara = CNPJ()
         return mascara.mask(self.cnpj)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.formata()
